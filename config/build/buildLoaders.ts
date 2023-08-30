@@ -3,11 +3,14 @@ import { babelRule } from "./rules/babel";
 import { BuildOptions } from "./types/config";
 import { cssRule } from "./rules/styles";
 import { fileRule } from "./rules/file";
+import { svgRule } from "./rules/svg";
 
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
   const { isDev } = options;
 
   const fileLoader = fileRule();
+
+  const svgLoader = svgRule();
 
   const codeBabelLoader = babelRule({ ...options, isTsx: false });
 
@@ -15,5 +18,11 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
 
   const cssLoader = cssRule(isDev);
 
-  return [fileLoader, codeBabelLoader, tsxCodeBabelLoader, cssLoader];
+  return [
+    fileLoader,
+    svgLoader,
+    codeBabelLoader,
+    tsxCodeBabelLoader,
+    cssLoader,
+  ];
 };
