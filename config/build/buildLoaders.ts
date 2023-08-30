@@ -2,9 +2,12 @@ import { RuleSetRule } from "webpack";
 import { babelRule } from "./rules/babel";
 import { BuildOptions } from "./types/config";
 import { cssRule } from "./rules/styles";
+import { fileRule } from "./rules/file";
 
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
   const { isDev } = options;
+
+  const fileLoader = fileRule();
 
   const codeBabelLoader = babelRule({ ...options, isTsx: false });
 
@@ -12,5 +15,5 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
 
   const cssLoader = cssRule(isDev);
 
-  return [codeBabelLoader, tsxCodeBabelLoader, cssLoader];
+  return [fileLoader, codeBabelLoader, tsxCodeBabelLoader, cssLoader];
 };
