@@ -6,6 +6,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { DefinePlugin, ProgressPlugin, WebpackPluginInstance } from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { BuildOptions } from "./types/config";
+import CircularDependencyPlugin from "circular-dependency-plugin";
 
 export const buildPlugins = (
   options: BuildOptions
@@ -20,6 +21,11 @@ export const buildPlugins = (
     }),
 
     new ProgressPlugin(),
+
+    new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      failOnError: true,
+    }),
 
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
