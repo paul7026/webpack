@@ -2,6 +2,7 @@ import { Configuration } from "webpack";
 import { BuildOptions } from "./types/config";
 import { buildLoaders } from "./buildLoaders";
 import { buildDevServer } from "./buildDevServer";
+import { buildResolvers } from "./buildResolvers";
 
 export function buildWebpackConfig(options: BuildOptions): Configuration {
   const { paths, mode, isDev } = options;
@@ -19,6 +20,7 @@ export function buildWebpackConfig(options: BuildOptions): Configuration {
     module: {
       rules: buildLoaders(options),
     },
+    resolve: buildResolvers(options),
     devtool: isDev ? "eval-cheap-module-source-map" : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   };
