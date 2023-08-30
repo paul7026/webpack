@@ -1,0 +1,54 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "editor.formatOnSave": true,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "scss"],
+  "css.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "gitlens.gitCommands.skipConfirmations": [
+    "fetch:command",
+    "switch:command",
+    "stash-push:command",
+    "stash-apply:command"
+  ],
+  "cSpell.userWords": [
+    "Datacenter",
+    "fontsource",
+    "pmmmwh",
+    "reduxjs",
+    "roboto",
+    "stylelint",
+    "svgr"
+  ],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "tabnine.experimentalAutoImports": true,
+  "redhat.telemetry.enabled": true,
+  "git.ignoreRebaseWarning": true
+}

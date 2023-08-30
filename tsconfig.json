@@ -27,7 +27,7 @@
     "moduleResolution": "node",
     "rootDir": "./",
     "allowSyntheticDefaultImports": true,
-    "noEmit": false
+    "noEmit": true
   },
   "ts-node": {
     "compilerOptions": {

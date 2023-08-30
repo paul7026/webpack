@@ -1,14 +1,14 @@
-import { MainPage } from "pages/MainPage";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom'
+import { MainPage } from 'pages/MainPage'
 
 export enum AppRoutes {
-  MAIN = "main",
+  MAIN = 'main',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
-  [AppRoutes.MAIN]: "/",
-};
+  [AppRoutes.MAIN]: '/',
+}
 
 export const router = createBrowserRouter([
   { path: RoutePath.main, element: <MainPage /> },
-]);
+])
